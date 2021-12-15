@@ -3,8 +3,8 @@
  *
  */
 
-#ifndef LV_DEMO_MUSIC_LIST_H
-#define LV_DEMO_MUSIC_LIST_H
+#ifndef LV_DEMO_RTT_MUSIC_LIST_H
+#define LV_DEMO_RTT_MUSIC_LIST_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,4 +40,4 @@ void _lv_demo_music_list_btn_check(uint32_t track_id, bool state);
 } /* extern "C" */
 #endif
 
-#endif /*LV_DEMO_MUSIC_LIST_H*/
+#endif /*LV_DEMO_RTT_MUSIC_LIST_H*/

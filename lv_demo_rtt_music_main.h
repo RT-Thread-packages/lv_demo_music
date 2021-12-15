@@ -3,8 +3,8 @@
  *
  */
 
-#ifndef LV_DEMO_MUSIC_MAIN_H
-#define LV_DEMO_MUSIC_MAIN_H
+#ifndef LV_DEMO_RTT_MUSIC_MAIN_H
+#define LV_DEMO_RTT_MUSIC_MAIN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,4 +51,4 @@ void _lv_demo_music_album_next(bool next);
 } /* extern "C" */
 #endif
 
-#endif /*LV_DEMO_MUSIC_MAIN_H*/
+#endif /*LV_DEMO_RTT_MUSIC_MAIN_H*/

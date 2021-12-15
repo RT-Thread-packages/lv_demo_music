@@ -3,8 +3,8 @@
  *
  */
 
-#ifndef LV_DEMO_MUSIC_H
-#define LV_DEMO_MUSIC_H
+#ifndef LV_DEMO_RTT_MUSIC_H
+#define LV_DEMO_RTT_MUSIC_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,4 +51,4 @@ uint32_t _lv_demo_music_get_track_length(uint32_t track_id);
 } /* extern "C" */
 #endif
 
-#endif /*LV_DEMO_MUSIC_H*/
+#endif /*LV_DEMO_RTT_MUSIC_H*/
