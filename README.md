@@ -6,7 +6,7 @@
 The music player demo shows what kind of modern, smartphone-like user interfaces can be created on LVGL. It works the best with display with 480x272 or 272x480 resolution. 
 
 
-![Music player demo with LVGL embedded GUI library](https://github.com/lvgl/lv_examples/blob/master/src/lv_demo_music/screenshot1.gif?raw=true)
+![Music player demo with LVGL embedded GUI library](screenshot1.gif)
 
 ## 如何使用这个Demo
 
@@ -66,7 +66,3 @@ https://github.com/RT-Thread/rt-thread/tree/master/bsp/qemu-vexpress-a9/drivers/
 - install `librosa` with `pip3 install librosa`	
 - run `python sectrum.py my_file.mp3`
 - see the result in `spectrum.h`
-
-
-
-同步官方时间：2021-11-26
