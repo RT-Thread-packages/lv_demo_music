@@ -47,7 +47,7 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
 
 https://github.com/RT-Thread/rt-thread/tree/master/bsp/qemu-vexpress-a9/drivers/lvgl
 
-注意：这是个模拟器BSP，因此没有`board`文件夹，LVGL相关配置源文件放在了`driver`文件夹中。实际移植时，应当放在BSP目录下的`board/ports/lvgl`文件夹下。
+注意：这是个模拟器BSP，因此没有`board`文件夹，LVGL相关配置源文件放在了`drivers`文件夹中。实际移植时，应当放在BSP目录下的`board/ports/lvgl`文件夹下。
 
 硬件BSP实际位置参考：https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/board/ports/lvgl
 
