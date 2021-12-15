@@ -14,7 +14,7 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
 
 - 如果想要自动播放的话，可以增加宏定义`#define LV_DEMO_RTT_MUSIC_AUTO_PLAY 1`
 
-  lv_conf.h文件涉及到本demo的宏定义示例：
+  `lv_conf.h`文件涉及到本demo的宏定义配置示例：
   
   ```c
     /* music player demo */
