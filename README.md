@@ -1,17 +1,45 @@
 # Music Player Demo for RT-Thread
 
+# LVGL音乐播放器演示示例（RT-Thread定制版）
+
 ## Overview
 The music player demo shows what kind of modern, smartphone-like user interfaces can be created on LVGL. It works the best with display with 480x272 or 272x480 resolution. 
 
 
 ![Music player demo with LVGL embedded GUI library](https://github.com/lvgl/lv_examples/blob/master/src/lv_demo_music/screenshot1.gif?raw=true)
 
-## Run the demo
-- In `lv_ex_conf.h` set `LV_USE_DEMO_RTT_MUSIC 1`
-- With `LV_DEMO_RTT_MUSIC_AUTO_PLAY` enabled a ~60 sec demo will be played.
-- After `lv_init()` and initializing the drivers call `lv_demo_music()`
+## 如何使用这个Demo
+
+- 在`lv_conf.h`中增加宏定义`#define LV_USE_DEMO_RTT_MUSIC 1 `
+
+- 如果想要自动播放的话，可以增加宏定义`#define LV_DEMO_RTT_MUSIC_AUTO_PLAY 1`
+
+- 调用`lv_demo_music()`函数：
+
+  ```c
+  static void lvgl_thread(void *parameter)
+  {
+      extern void lv_demo_music(void); //对外声明lv_demo_music()函数
+      lv_demo_music(); //调用demo函数运行音乐播放器
+  
+      while(1)
+      {
+          lv_task_handler();
+          rt_thread_mdelay(1);
+      }
+  }
+  ```
+
+## 参考工程
+
+https://github.com/RT-Thread/rt-thread/tree/master/bsp/qemu-vexpress-a9/drivers/lvgl
+
+注意：这是个模拟器BSP，因此没有`board`文件夹，LVGL相关配置源文件放在了`driver`文件夹中。实际移植时，应当放在BSP目录下的`board/ports/lvgl`文件夹下。
+
+硬件BSP实际位置参考：https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/board/ports/lvgl
 
 ## How the spectrum animation works
+
 - `assets/spectrum.py` creates an array of spectrum values from a music. 4 band are created with 33 samples/sec: bass, bass-mid, mid, mid-treble.
 - The spectrum meter UI does the followings:
 	- Zoom the album cover proportionality to the current bass value
@@ -25,3 +53,7 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
 - install `librosa` with `pip3 install librosa`	
 - run `python sectrum.py my_file.mp3`
 - see the result in `spectrum.h`
+
+
+
+同步官方时间：2021-11-26
