@@ -213,25 +213,25 @@ static void auto_step_cb(lv_timer_t * t)
         break;
     case 40: {
           lv_obj_t * bg = lv_layer_top();
-          lv_obj_set_style_bg_color(bg, lv_color_hex(0x6f8af6), 0);
+          lv_obj_set_style_bg_color(bg, lv_color_hex(0x28B8BA), 0);
           lv_obj_set_style_text_color(bg, lv_color_white(), 0);
           lv_obj_set_style_bg_opa(bg, LV_OPA_COVER, 0);
           lv_obj_fade_in(bg, 400, 0);
           lv_obj_t * dsc = lv_label_create(bg);
-          lv_obj_set_style_text_font(dsc, font_small, 0);
+          lv_obj_set_style_text_font(dsc, font_large, 0);
           lv_label_set_text(dsc, "The average FPS is");
-          lv_obj_align(dsc, LV_ALIGN_TOP_MID, 0, 90);
+          lv_obj_align(dsc, LV_ALIGN_TOP_MID, 0, 200);
 
           lv_obj_t * num = lv_label_create(bg);
           lv_obj_set_style_text_font(num, font_large, 0);
 #if LV_USE_PERF_MONITOR
           lv_label_set_text_fmt(num, "%d", lv_refr_get_fps_avg());
 #endif
-          lv_obj_align(num, LV_ALIGN_TOP_MID, 0, 120);
+          lv_obj_align(num, LV_ALIGN_TOP_MID, 0, 230);
 
           lv_obj_t * attr = lv_label_create(bg);
           lv_obj_set_style_text_align(attr, LV_TEXT_ALIGN_CENTER, 0);
-          lv_obj_set_style_text_font(attr, font_small, 0);
+          lv_obj_set_style_text_font(attr, font_large, 0);
 #if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
           lv_label_set_text(attr, "Copyright 2020 LVGL Kft.\nwww.lvgl.io | lvgl@lvgl.io");
 #else
