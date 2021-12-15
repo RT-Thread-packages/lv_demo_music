@@ -1,15 +1,15 @@
 /**
- * @file lv_demo_music_list.c
+ * @file lv_demo_rtt_music_list.c
  *
  */
 
 /*********************
  *      INCLUDES
  *********************/
-#include "lv_demo_music_list.h"
+#include "lv_demo_rtt_music_list.h"
 #if LV_USE_DEMO_RTT_MUSIC
 
-#include "lv_demo_music_main.h"
+#include "lv_demo_rtt_music_main.h"
 
 /*********************
  *      DEFINES

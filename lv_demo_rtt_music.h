@@ -1,5 +1,5 @@
 /**
- * @file lv_demo_music.h
+ * @file lv_demo_rtt_music.h
  *
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file lv_demo_music_list.h
+ * @file lv_demo_rtt_music_list.h
  *
  */
 
@@ -13,7 +13,7 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-#include "lv_demo_music.h"
+#include "lv_demo_rtt_music.h"
 #if LV_USE_DEMO_RTT_MUSIC
 
 /*********************
