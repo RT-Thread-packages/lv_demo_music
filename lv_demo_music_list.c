@@ -7,7 +7,7 @@
  *      INCLUDES
  *********************/
 #include "lv_demo_music_list.h"
-#if LV_USE_DEMO_MUSIC
+#if LV_USE_DEMO_RTT_MUSIC
 
 #include "lv_demo_music_main.h"
 
@@ -214,5 +214,5 @@ static void btn_click_event_cb(lv_event_t * e)
 
     _lv_demo_music_play(idx);
 }
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/
 

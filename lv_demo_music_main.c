@@ -7,7 +7,7 @@
  *      INCLUDES
  *********************/
 #include "lv_demo_music_main.h"
-#if LV_USE_DEMO_MUSIC
+#if LV_USE_DEMO_RTT_MUSIC
 
 #include "lv_demo_music_list.h"
 #include "assets/spectrum_1.h"
@@ -950,5 +950,5 @@ static void stop_start_anim(lv_timer_t * t)
     start_anim = false;
     lv_obj_refresh_ext_draw_size(spectrum_obj);
 }
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/
 

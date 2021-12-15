@@ -1,5 +1,5 @@
 #include "../lv_demo_music.h"
-#if LV_USE_DEMO_MUSIC
+#if LV_USE_DEMO_RTT_MUSIC
 
 #ifndef LV_ATTRIBUTE_MEM_ALIGN
 #define LV_ATTRIBUTE_MEM_ALIGN
@@ -418,5 +418,5 @@ lv_img_dsc_t img_lv_demo_music_logo = {
 };
 
 
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/
 

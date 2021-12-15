@@ -15,7 +15,7 @@ extern "C" {
  *********************/
 #include <lvgl.h>
 
-#if LV_USE_DEMO_MUSIC
+#if LV_USE_DEMO_RTT_MUSIC
 
 /*********************
  *      DEFINES
@@ -45,7 +45,7 @@ uint32_t _lv_demo_music_get_track_length(uint32_t track_id);
  *      MACROS
  **********************/
 
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/
 
 #ifdef __cplusplus
 } /* extern "C" */

@@ -8,7 +8,7 @@
  *********************/
 #include "lv_demo_music.h"
 
-#if LV_USE_DEMO_MUSIC
+#if LV_USE_DEMO_RTT_MUSIC
 
 #include "lv_demo_music_main.h"
 #include "lv_demo_music_list.h"
@@ -24,7 +24,7 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
-#if LV_DEMO_MUSIC_AUTO_PLAY
+#if LV_DEMO_RTT_MUSIC_AUTO_PLAY
 static void auto_step_cb(lv_timer_t * timer);
 #endif
 
@@ -118,7 +118,7 @@ void lv_demo_music(void)
     list = _lv_demo_music_list_create(lv_scr_act());
     ctrl = _lv_demo_music_main_create(lv_scr_act());
 
-#if LV_DEMO_MUSIC_AUTO_PLAY
+#if LV_DEMO_RTT_MUSIC_AUTO_PLAY
     lv_timer_create(auto_step_cb, 1000, NULL);
 #endif
 }
@@ -151,7 +151,7 @@ uint32_t _lv_demo_music_get_track_length(uint32_t track_id)
  *   STATIC FUNCTIONS
  **********************/
 
-#if LV_DEMO_MUSIC_AUTO_PLAY
+#if LV_DEMO_RTT_MUSIC_AUTO_PLAY
 static void auto_step_cb(lv_timer_t * t)
 {
     LV_UNUSED(t);
@@ -248,6 +248,6 @@ static void auto_step_cb(lv_timer_t * t)
     state++;
 }
 
-#endif /*LV_DEMO_MUSIC_AUTO_PLAY*/
+#endif /*LV_DEMO_RTT_MUSIC_AUTO_PLAY*/
 
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/

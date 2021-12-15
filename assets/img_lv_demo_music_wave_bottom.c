@@ -1,5 +1,5 @@
 #include "../lv_demo_music.h"
-#if LV_USE_DEMO_MUSIC  && !LV_DEMO_MUSIC_LARGE
+#if LV_USE_DEMO_RTT_MUSIC  && !LV_DEMO_MUSIC_LARGE
 
 #ifndef LV_ATTRIBUTE_MEM_ALIGN
 #define LV_ATTRIBUTE_MEM_ALIGN
@@ -197,6 +197,6 @@ lv_img_dsc_t img_lv_demo_music_wave_bottom = {
   .data = img_lv_demo_music_wave_bottom_map,
 };
 
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/
 
 

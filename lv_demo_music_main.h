@@ -14,7 +14,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include "lv_demo_music.h"
-#if LV_USE_DEMO_MUSIC
+#if LV_USE_DEMO_RTT_MUSIC
 
 /*********************
  *      DEFINES
@@ -44,7 +44,7 @@ void _lv_demo_music_album_next(bool next);
 /**********************
  *      MACROS
  **********************/
-#endif /*LV_USE_DEMO_MUSIC*/
+#endif /*LV_USE_DEMO_RTT_MUSIC*/
 
 
 #ifdef __cplusplus
