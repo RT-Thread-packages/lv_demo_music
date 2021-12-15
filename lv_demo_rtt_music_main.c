@@ -22,7 +22,7 @@
 #define BAR_COLOR1          lv_color_hex(0xe9dbfc)
 #define BAR_COLOR2          lv_color_hex(0x6f8af6)
 #define BAR_COLOR3          lv_color_hex(0xffffff)
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
 # define BAR_COLOR1_STOP     160
 # define BAR_COLOR2_STOP     200
 #else
@@ -104,7 +104,7 @@ static const uint16_t rnd_array[30] = {994, 285, 553, 11, 792, 707, 966, 641, 85
 
 lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
 {
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
     font_small = &lv_font_montserrat_22;
     font_large = &lv_font_montserrat_32;
 #else
@@ -121,12 +121,12 @@ lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
     spectrum_obj = create_spectrum_obj(cont);
     lv_obj_t * handle_box = create_handle(cont);
 
-#if LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_ROUND
     lv_obj_set_style_pad_hor(cont, LV_HOR_RES / 6, 0);
 #endif
 
     /*Arrange the content into a grid*/
-#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
     static const lv_coord_t grid_cols[] = {LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
     static lv_coord_t grid_rows[] = {LV_DEMO_MUSIC_HANDLE_SIZE,     /*Spacing*/
                                            0,   /*Spectrum obj, set later*/
@@ -149,7 +149,7 @@ lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
     lv_obj_set_grid_cell(icon_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_ALIGN_CENTER, 4, 1);
     lv_obj_set_grid_cell(ctrl_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_ALIGN_CENTER, 6, 1);
     lv_obj_set_grid_cell(handle_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_ALIGN_CENTER, 8, 1);
-#elif LV_DEMO_MUSIC_LANDSCAPE == 0
+#elif LV_DEMO_RTT_MUSIC_LANDSCAPE == 0
     static const lv_coord_t grid_cols[] = {LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
     static const lv_coord_t grid_rows[] = {LV_DEMO_MUSIC_HANDLE_SIZE,     /*Spacing*/
                                            LV_GRID_FR(1),   /*Spacer*/
@@ -157,7 +157,7 @@ lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
                                            LV_GRID_FR(3),   /*Spacer*/
                                            LV_GRID_CONTENT, /*Icon box*/
                                            LV_GRID_FR(3),   /*Spacer*/
-# if LV_DEMO_MUSIC_LARGE == 0
+# if LV_DEMO_RTT_MUSIC_LARGE  == 0
                                            250,    /*Spectrum obj*/
 # else
                                            480,   /*Spectrum obj*/
@@ -348,7 +348,7 @@ static lv_obj_t * create_cont(lv_obj_t * parent)
     /*Create a container for the player*/
     lv_obj_t * player = lv_obj_create(main_cont);
     lv_obj_set_y(player, - LV_DEMO_MUSIC_HANDLE_SIZE);
-#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
     lv_obj_set_size(player, LV_HOR_RES, 2 * LV_VER_RES + LV_DEMO_MUSIC_HANDLE_SIZE * 2);
 #else
     lv_obj_set_size(player, LV_HOR_RES, LV_VER_RES + LV_DEMO_MUSIC_HANDLE_SIZE * 2);
@@ -374,7 +374,7 @@ static lv_obj_t * create_cont(lv_obj_t * parent)
 //    lv_obj_set_style_bg_color(placeholder2, lv_color_hex(0x00ff00), 0);
 //    lv_obj_set_style_bg_opa(placeholder2, LV_OPA_50, 0);
 
-#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
     lv_obj_t * placeholder3 = lv_obj_create(main_cont);
     lv_obj_remove_style_all(placeholder3);
     lv_obj_clear_flag(placeholder3, LV_OBJ_FLAG_CLICKABLE);
@@ -422,7 +422,7 @@ static void create_wave_images(lv_obj_t * parent)
     LV_IMG_DECLARE(img_lv_demo_music_corner_right);
     lv_obj_t * wave_corner = lv_img_create(parent);
     lv_img_set_src(wave_corner, &img_lv_demo_music_corner_left);
-#if LV_DEMO_MUSIC_ROUND == 0
+#if LV_DEMO_RTT_MUSIC_ROUND == 0
     lv_obj_align(wave_corner, LV_ALIGN_BOTTOM_LEFT, 0, 0);
 #else
     lv_obj_align(wave_corner, LV_ALIGN_BOTTOM_LEFT, -LV_HOR_RES / 6, 0);
@@ -431,7 +431,7 @@ static void create_wave_images(lv_obj_t * parent)
 
     wave_corner = lv_img_create(parent);
     lv_img_set_src(wave_corner, &img_lv_demo_music_corner_right);
-#if LV_DEMO_MUSIC_ROUND == 0
+#if LV_DEMO_RTT_MUSIC_ROUND == 0
     lv_obj_align(wave_corner, LV_ALIGN_BOTTOM_RIGHT, 0, 0);
 #else
     lv_obj_align(wave_corner, LV_ALIGN_BOTTOM_RIGHT, LV_HOR_RES / 6, 0);
@@ -499,7 +499,7 @@ static lv_obj_t * create_spectrum_obj(lv_obj_t * parent)
     /*Create the spectrum visualizer*/
     lv_obj_t * obj = lv_obj_create(parent);
     lv_obj_remove_style_all(obj);
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
     lv_obj_set_height(obj, 500);
 #else
     lv_obj_set_height(obj, 250);
@@ -517,7 +517,7 @@ static lv_obj_t * create_ctrl_box(lv_obj_t * parent)
     lv_obj_t * cont = lv_obj_create(parent);
     lv_obj_remove_style_all(cont);
     lv_obj_set_height(cont, LV_SIZE_CONTENT);
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
     lv_obj_set_style_pad_bottom(cont, 17, 0);
 #else
     lv_obj_set_style_pad_bottom(cont, 8, 0);
@@ -568,7 +568,7 @@ static lv_obj_t * create_ctrl_box(lv_obj_t * parent)
     lv_obj_set_style_anim_time(slider_obj, 100, 0);
     lv_obj_add_flag(slider_obj, LV_OBJ_FLAG_CLICKABLE); /*No input from the slider*/
 
-#if LV_DEMO_MUSIC_LARGE == 0
+#if LV_DEMO_RTT_MUSIC_LARGE  == 0
     lv_obj_set_height(slider_obj, 3);
 #else
     lv_obj_set_height(slider_obj, 6);
@@ -609,7 +609,7 @@ static lv_obj_t * create_handle(lv_obj_t * parent)
     lv_obj_set_style_text_color(handle_label, lv_color_hex(0x8a86b8), 0);
 
     lv_obj_t * handle_rect = lv_obj_create(cont);
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
     lv_obj_set_size(handle_rect, 40, 3);
 #else
     lv_obj_set_size(handle_rect, 20, 2);
@@ -650,7 +650,7 @@ static void track_load(uint32_t id)
     lv_anim_set_var(&a, album_img_obj);
     lv_anim_set_time(&a, 500);
     lv_anim_set_path_cb(&a, lv_anim_path_ease_out);
-#if LV_DEMO_MUSIC_LANDSCAPE
+#if LV_DEMO_RTT_MUSIC_LANDSCAPE
     if(next) {
         lv_anim_set_values(&a, 0, - LV_HOR_RES / 7);
     } else {
@@ -710,7 +710,7 @@ static void spectrum_draw_event_cb(lv_event_t * e)
     lv_event_code_t code = lv_event_get_code(e);
 
     if(code == LV_EVENT_REFR_EXT_DRAW_SIZE) {
-#if LV_DEMO_MUSIC_LANDSCAPE
+#if LV_DEMO_RTT_MUSIC_LANDSCAPE
         lv_event_set_ext_draw_size(e, LV_HOR_RES);
 #else
         lv_event_set_ext_draw_size(e, LV_VER_RES);
@@ -739,7 +739,7 @@ static void spectrum_draw_event_cb(lv_event_t * e)
         uint32_t i;
 
         lv_coord_t min_a = 5;
-#if LV_DEMO_MUSIC_LARGE == 0
+#if LV_DEMO_RTT_MUSIC_LARGE  == 0
         lv_coord_t r_in = 77;
 #else
         lv_coord_t r_in = 160;

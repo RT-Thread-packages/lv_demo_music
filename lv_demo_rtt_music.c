@@ -157,7 +157,7 @@ static void auto_step_cb(lv_timer_t * t)
     LV_UNUSED(t);
     static uint32_t state = 0;
 
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
     const lv_font_t * font_small = &lv_font_montserrat_22;
     const lv_font_t * font_large = &lv_font_montserrat_32;
 #else
@@ -179,7 +179,7 @@ static void auto_step_cb(lv_timer_t * t)
     case 8:
         _lv_demo_music_play(0);
         break;
-#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
     case 11:
         lv_obj_scroll_by(ctrl, 0, -LV_VER_RES, LV_ANIM_ON);
         break;
@@ -203,7 +203,7 @@ static void auto_step_cb(lv_timer_t * t)
     case 19:
         lv_obj_scroll_by(ctrl, 0, LV_VER_RES, LV_ANIM_ON);
         break;
-#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
     case 20:
         lv_obj_scroll_by(ctrl, 0, LV_VER_RES, LV_ANIM_ON);
         break;
@@ -232,7 +232,7 @@ static void auto_step_cb(lv_timer_t * t)
           lv_obj_t * attr = lv_label_create(bg);
           lv_obj_set_style_text_align(attr, LV_TEXT_ALIGN_CENTER, 0);
           lv_obj_set_style_text_font(attr, font_small, 0);
-#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND
+#if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
           lv_label_set_text(attr, "Copyright 2020 LVGL Kft.\nwww.lvgl.io | lvgl@lvgl.io");
 #else
           lv_label_set_text(attr, "Copyright 2020 LVGL Kft. | www.lvgl.io | lvgl@lvgl.io");

@@ -21,7 +21,7 @@ extern "C" {
  *      DEFINES
  *********************/
 
-#if LV_DEMO_MUSIC_LARGE
+#if LV_DEMO_RTT_MUSIC_LARGE
 #  define LV_DEMO_MUSIC_HANDLE_SIZE  40
 #else
 #  define LV_DEMO_MUSIC_HANDLE_SIZE  20

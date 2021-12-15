@@ -1,5 +1,5 @@
 #include "../lv_demo_rtt_music.h"
-#if LV_USE_DEMO_RTT_MUSIC  && !LV_DEMO_MUSIC_LARGE
+#if LV_USE_DEMO_RTT_MUSIC  && !LV_DEMO_RTT_MUSIC_LARGE
 
 #ifndef LV_ATTRIBUTE_MEM_ALIGN
 #define LV_ATTRIBUTE_MEM_ALIGN
