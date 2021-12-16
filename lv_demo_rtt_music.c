@@ -229,15 +229,25 @@ static void auto_step_cb(lv_timer_t * t)
 #endif
           lv_obj_align(num, LV_ALIGN_TOP_MID, 0, 230);
 
-          lv_obj_t * attr = lv_label_create(bg);
-          lv_obj_set_style_text_align(attr, LV_TEXT_ALIGN_CENTER, 0);
-          lv_obj_set_style_text_font(attr, font_large, 0);
+          /* show LVGL and RT-Thread version */
+          lv_obj_t* version_attr = lv_label_create(bg);
+          lv_obj_set_style_text_align(version_attr, LV_TEXT_ALIGN_CENTER, 0);
+          lv_obj_set_style_text_font(version_attr, font_large, 0);
+          lv_label_set_text_fmt(version_attr, "LVGL %d.%d.%d & RT-Thread %d.%d.%d",
+              LVGL_VERSION_MAJOR, LVGL_VERSION_MINOR, LVGL_VERSION_PATCH,
+              RT_VERSION, RT_SUBVERSION, RT_REVISION);
+          lv_obj_align(version_attr, LV_ALIGN_BOTTOM_MID, 0, -40);
+
+          /* show LVGL copyright */
+          lv_obj_t * copyright_attr = lv_label_create(bg);
+          lv_obj_set_style_text_align(copyright_attr, LV_TEXT_ALIGN_CENTER, 0);
+          lv_obj_set_style_text_font(copyright_attr, font_large, 0);
 #if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
-          lv_label_set_text(attr, "Copyright 2020 LVGL Kft.\nwww.lvgl.io | lvgl@lvgl.io");
+          lv_label_set_text(copyright_attr, "Copyright 2020 LVGL Kft.\nwww.lvgl.io | lvgl@lvgl.io");
 #else
-          lv_label_set_text(attr, "Copyright 2020 LVGL Kft. | www.lvgl.io | lvgl@lvgl.io");
+          lv_label_set_text(copyright_attr, "Copyright 2020 LVGL Kft. | www.lvgl.io | lvgl@lvgl.io");
 #endif
-          lv_obj_align(attr, LV_ALIGN_BOTTOM_MID, 0, -10);
+          lv_obj_align(copyright_attr, LV_ALIGN_BOTTOM_MID, 0, -10);
           break;
     }
     case 41:
