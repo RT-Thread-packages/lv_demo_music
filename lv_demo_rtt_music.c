@@ -211,6 +211,7 @@ static void auto_step_cb(lv_timer_t * t)
     case 30:
         _lv_demo_music_play(2);
         break;
+#ifndef LV_DEMO_RTT_MUSIC_AUTO_PLAY_FOREVER
     case 40: {
           lv_obj_t * bg = lv_layer_top();
           lv_obj_set_style_bg_color(bg, lv_color_hex(0x28B8BA), 0);
@@ -250,9 +251,14 @@ static void auto_step_cb(lv_timer_t * t)
           lv_obj_align(copyright_attr, LV_ALIGN_BOTTOM_MID, 0, -10);
           break;
     }
+#endif /* LV_DEMO_RTT_MUSIC_AUTO_PLAY_FOREVER */
     case 41:
+#ifndef LV_DEMO_RTT_MUSIC_AUTO_PLAY_FOREVER
         lv_scr_load(lv_obj_create(NULL));
         _lv_demo_music_pause();
+#else
+        state = 0;
+#endif
         break;
     }
     state++;
