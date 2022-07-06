@@ -21,12 +21,12 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
   ```c
     /* music player demo */
     #include <rtconfig.h>
-    #define LV_HOR_RES_MAX          BSP_LCD_WIDTH
-    #define LV_VER_RES_MAX          BSP_LCD_HEIGHT
+
     #define LV_USE_DEMO_RTT_MUSIC       1
     #define LV_DEMO_RTT_MUSIC_AUTO_PLAY 1
     #define LV_FONT_MONTSERRAT_12       1
     #define LV_FONT_MONTSERRAT_16       1
+    #define LV_COLOR_SCREEN_TRANSP      1
   ```
   
 - 调用`lv_demo_music()`函数：[例程](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f469-st-disco/applications/lvgl/demo/lv_demo.c)
