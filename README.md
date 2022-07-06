@@ -29,19 +29,13 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
     #define LV_FONT_MONTSERRAT_16       1
   ```
   
-- 调用`lv_demo_music()`函数：
+- 调用`lv_demo_music()`函数：[例程](https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f469-st-disco/applications/lvgl/demo/lv_demo.c)
 
   ```c
-  static void lvgl_thread(void *parameter)
+  void lv_user_gui_init(void)
   {
-      extern void lv_demo_music(void); //对外声明lv_demo_music()函数
-      lv_demo_music(); //调用demo函数运行音乐播放器
-  
-      while(1)
-      {
-          lv_task_handler();
-          rt_thread_mdelay(1);
-      }
+      extern void lv_demo_music(void);
+      lv_demo_music();
   }
   ```
 
@@ -54,11 +48,10 @@ https://github.com/RT-Thread/rt-thread/tree/master/bsp/qemu-vexpress-a9/drivers/
 硬件BSP实际位置参考：https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/board/ports/lvgl
 
 ## How the spectrum animation works
-
 - `assets/spectrum.py` creates an array of spectrum values from a music. 4 band are created with 33 samples/sec: bass, bass-mid, mid, mid-treble.
 - The spectrum meter UI does the followings:
 	- Zoom the album cover proportionality to the current bass value
-	- Display the 4 bands on the left side of a circle by default at 0°, 45°, 90°, 135° 
+	- Display the 4 bands on the left side of a circle by default at 0°, 45°, 90°, 135°
 	- Add extra bars next to the "main bars" with a cosine shape. Add more bars for the lower bands.
 	- If there is a large enough bass, add a random offset to the position of the bars. E.g. start from 63° instead of 0°. (bars greater than 180° start again from 0°)
 	- If there is no bass, add 1 to the offset of the bars (it creates a "walking" effect)
