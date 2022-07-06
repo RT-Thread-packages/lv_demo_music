@@ -21,7 +21,9 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
   ```c
     /* music player demo */
     #include <rtconfig.h>
-
+    
+    #define LV_HOR_RES_MAX              LCD_WIDTH
+    #define LV_VER_RES_MAX              LCD_HEIGHT
     #define LV_USE_DEMO_RTT_MUSIC       1
     #define LV_DEMO_RTT_MUSIC_AUTO_PLAY 1
     #define LV_FONT_MONTSERRAT_12       1
