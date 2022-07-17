@@ -234,7 +234,7 @@ static void auto_step_cb(lv_timer_t * t)
           lv_obj_t* version_attr = lv_label_create(bg);
           lv_obj_set_style_text_align(version_attr, LV_TEXT_ALIGN_CENTER, 0);
           lv_obj_set_style_text_font(version_attr, font_large, 0);
-          lv_label_set_text_fmt(version_attr, "LVGL %d.%d.%d & RT-Thread %ld.%ld.%ld",
+          lv_label_set_text_fmt(version_attr, "LVGL %d.%d.%d & RT-Thread %d.%d.%d",
               LVGL_VERSION_MAJOR, LVGL_VERSION_MINOR, LVGL_VERSION_PATCH,
               RT_VERSION, RT_SUBVERSION, RT_REVISION);
           lv_obj_align(version_attr, LV_ALIGN_BOTTOM_MID, 0, -40);
