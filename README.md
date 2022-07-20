@@ -41,13 +41,10 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
   }
   ```
 
-## 参考工程
+- 参考工程
 
-https://github.com/RT-Thread/rt-thread/tree/master/bsp/qemu-vexpress-a9/drivers/lvgl
+   https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f469-st-disco/applications/lvgl/demo/lv_demo.c
 
-注意：这是个模拟器BSP，因此没有`board`文件夹，LVGL相关配置源文件放在了`drivers`文件夹中。实际移植时，应当放在BSP目录下的`board/ports/lvgl`文件夹下。
-
-硬件BSP实际位置参考：https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora/board/ports/lvgl
 
 ## How the spectrum animation works
 - `assets/spectrum.py` creates an array of spectrum values from a music. 4 band are created with 33 samples/sec: bass, bass-mid, mid, mid-treble.
