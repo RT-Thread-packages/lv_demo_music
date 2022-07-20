@@ -41,11 +41,6 @@ The music player demo shows what kind of modern, smartphone-like user interfaces
   }
   ```
 
-- 参考工程
-
-   https://github.com/RT-Thread/rt-thread/blob/master/bsp/stm32/stm32f469-st-disco/applications/lvgl/demo/lv_demo.c
-
-
 ## How the spectrum animation works
 - `assets/spectrum.py` creates an array of spectrum values from a music. 4 band are created with 33 samples/sec: bass, bass-mid, mid, mid-treble.
 - The spectrum meter UI does the followings:
