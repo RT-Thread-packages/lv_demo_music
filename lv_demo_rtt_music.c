@@ -237,18 +237,25 @@ static void auto_step_cb(lv_timer_t * t)
           lv_label_set_text_fmt(version_attr, "LVGL %"LV_PRIu32".%"LV_PRIu32".%"LV_PRIu32" & RT-Thread %"LV_PRIu32".%"LV_PRIu32".%"LV_PRIu32,
               (uint32_t)LVGL_VERSION_MAJOR, (uint32_t)LVGL_VERSION_MINOR, (uint32_t)LVGL_VERSION_PATCH,
               (uint32_t)RT_VERSION, (uint32_t)RT_SUBVERSION, (uint32_t)RT_REVISION);
-          lv_obj_align(version_attr, LV_ALIGN_BOTTOM_MID, 0, -40);
+          lv_obj_align(version_attr, LV_ALIGN_BOTTOM_MID, 0, -70);
 
           /* show LVGL copyright */
-          lv_obj_t * copyright_attr = lv_label_create(bg);
-          lv_obj_set_style_text_align(copyright_attr, LV_TEXT_ALIGN_CENTER, 0);
-          lv_obj_set_style_text_font(copyright_attr, font_large, 0);
+          lv_obj_t * lvgl_copyright_attr = lv_label_create(bg);
+          lv_obj_set_style_text_align(lvgl_copyright_attr, LV_TEXT_ALIGN_CENTER, 0);
+          lv_obj_set_style_text_font(lvgl_copyright_attr, font_large, 0);
 #if LV_DEMO_RTT_MUSIC_SQUARE || LV_DEMO_RTT_MUSIC_ROUND
-          lv_label_set_text(copyright_attr, "Copyright 2020 LVGL Kft.\nwww.lvgl.io | lvgl@lvgl.io");
+          lv_label_set_text(lvgl_copyright_attr, "Copyright 2022 LVGL Kft.\nwww.lvgl.io | lvgl@lvgl.io");
 #else
-          lv_label_set_text(copyright_attr, "Copyright 2020 LVGL Kft. | www.lvgl.io | lvgl@lvgl.io");
+          lv_label_set_text(lvgl_copyright_attr, "Copyright 2022 LVGL Kft. | www.lvgl.io | lvgl@lvgl.io");
 #endif
-          lv_obj_align(copyright_attr, LV_ALIGN_BOTTOM_MID, 0, -10);
+          lv_obj_align(lvgl_copyright_attr, LV_ALIGN_BOTTOM_MID, 0, -40);
+
+          /* show RT-Thread copyright */
+          lv_obj_t * rtt_copyright_attr = lv_label_create(bg);
+          lv_obj_set_style_text_align(rtt_copyright_attr, LV_TEXT_ALIGN_CENTER, 0);
+          lv_obj_set_style_text_font(rtt_copyright_attr, font_large, 0);
+          lv_label_set_text(rtt_copyright_attr, "RT-Thread IoT RTOS | www.rt-thread.io");
+          lv_obj_align(rtt_copyright_attr, LV_ALIGN_BOTTOM_MID, 0, -10);
           break;
     }
 #endif /* LV_DEMO_RTT_MUSIC_AUTO_PLAY_FOREVER */
