@@ -236,7 +236,11 @@ static void auto_step_cb(lv_timer_t * t)
           lv_obj_set_style_text_font(version_attr, font_large, 0);
           lv_label_set_text_fmt(version_attr, "LVGL %"LV_PRIu32".%"LV_PRIu32".%"LV_PRIu32" & RT-Thread %"LV_PRIu32".%"LV_PRIu32".%"LV_PRIu32,
               (uint32_t)LVGL_VERSION_MAJOR, (uint32_t)LVGL_VERSION_MINOR, (uint32_t)LVGL_VERSION_PATCH,
+#if RT_VER_NUM < 0x50000
               (uint32_t)RT_VERSION, (uint32_t)RT_SUBVERSION, (uint32_t)RT_REVISION);
+#else
+              (uint32_t)RT_VERSION_MAJOR, (uint32_t)RT_VERSION_MINOR, (uint32_t)RT_VERSION_PATCH);
+#endif
           lv_obj_align(version_attr, LV_ALIGN_BOTTOM_MID, 0, -70);
 
           /* show LVGL copyright */
